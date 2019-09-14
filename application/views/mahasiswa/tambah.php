@@ -27,10 +27,9 @@
             <div class="form-group">
               <table for="jurusan">Jurusan</table>
               <select name="jurusan" id="jurusan" class="form-control">
-                <option selected>-</option>
-                <option value="kimia">Kimia</option>
-                <option value="informatika">Informatika</option>
-                <option value="mesin">Mesin</option>
+                <?php foreach($jurusan as $key): ?>
+                  <option value="<?= $key ?>"><?= $key ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
             <button type="submit" name="submit" class="btn btn-success float-right">Submit</button>

@@ -20,13 +20,14 @@
     }
 
     public function tambah(){
+      $data ['jurusan'] = array("Informatika","Kimia","Mesin");
       $this->form_validation->set_rules('nama', 'Nama', array('required', 'min_length[4]'));
       $this->form_validation->set_rules('nim', 'Nim', 'required|numeric');
       $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
       if ($this->form_validation->run() == FALSE) {
         # code...
-        $this->load->view('template/header');
-        $this->load->view('mahasiswa/tambah');
+        $this->load->view('template/header',$data);
+        $this->load->view('mahasiswa/tambah',$data);
         $this->load->view('template/footer');
       } else {
         # code...
@@ -42,21 +43,22 @@
     }
 
     public function detail($id){
-      $data['mahasiswa'] = $this->mahasiswa_model->detailMhs($id);
+      $data['mahasiswa'] = $this->mahasiswa_model->getMahasiswaById($id);
       $this->load->view('template/header',$data);
       $this->load->view('mahasiswa/detail',$data);
       $this->load->view('template/footer');
     }
 
     public function edit($id){
-      $data['jurusan'] = ['Informatika','Kimia','Industri'];
+      $data ['mahasiswa'] = $this->mahasiswa_model->getMahasiswaById($id);
+      $data ['jurusan'] = array("Informatika","Kimia","Mesin");
       $this->form_validation->set_rules('nama', 'Nama', array('required', 'min_length[4]'));
       $this->form_validation->set_rules('nim', 'Nim', 'required|numeric');
       $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
       if ($this->form_validation->run() == FALSE) {
         # code...
-        $this->load->view('template/header');
-        $this->load->view('mahasiswa/edit');
+        $this->load->view('template/header',$data);
+        $this->load->view('mahasiswa/edit',$data);
         $this->load->view('template/footer');
       } else {
         # code...

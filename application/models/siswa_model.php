@@ -23,6 +23,21 @@
         );
         $this->db->insert('siswa',$data);
       }
+      public function getDataSiswaById($id){
+        return $this->db->get_where('siswa',array('id'=>$id))->row_array();
+      }
+
+      public function editDataSiswa(){
+        $data =
+        array(
+          "id" => $this->input->post("id",true),
+          "nama" => $this->input->post("nama",true),
+          "alamat" => $this->input->post("alamat",true),
+          "nim" => $this->input->post("nim",true),
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('siswa', $data);
+      }
   }
   
   /* End of file siswa_model.php */

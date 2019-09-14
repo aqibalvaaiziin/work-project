@@ -25,9 +25,21 @@
         <td><?= $data['nim'] ?></td>
         <td>
           <a href="<?= base_url(); ?>siswa/hapus/<?= $data['id'] ;?>"
-            class="badge badge-danger float-right"
+            class="btn btn-danger float-right"
             onClick="return confirm('yakin mau hapus');"
-          > Hapus</a>
+          > 
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </a>
+          <a href="<?= base_url(); ?>siswa/edit/<?= $data['id'] ;?>"
+              class="btn btn-warning float-right mr-2"  
+          >
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+          <a href="<?= base_url(); ?>siswa/detail/<?= $data['id'] ;?>"
+            class="btn btn-primary float-right mr-2"  
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </a>
         </td>
       </tr>
       <?php endforeach; ?>
