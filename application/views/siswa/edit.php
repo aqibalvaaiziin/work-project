@@ -15,15 +15,15 @@
           <input type="hidden" name="id" value="<?= $siswa['id'] ;?>">
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama">
+              <input type="text" class="form-control" id="nama" name="nama" value="<?= $siswa['nama'] ;?> ">
             </div>
             <div class="form-group">
               <label for="alamat">Alamat</label>
-              <input type="text" class="form-control" id="alamat" name="alamat">
+              <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $siswa['alamat'] ;?>">
             </div>
             <div class="form-group">
               <label for="nim">NIM</label>
-              <input type="text" class="form-control" id="nim" name="nim">
+              <input type="text" class="form-control" id="nim" name="nim" value="<?= $siswa['nim'] ;?>">
             </div>
             <button type="submit" name="submit" class="btn btn-success float-right">Submit</button>
           </form>

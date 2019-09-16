@@ -14,6 +14,10 @@
     {
       $this->load->model('siswa_model');
       $data ['siswa'] = $this->siswa_model->getAllSiswa();
+      if ($this->input->post('keyword')) {
+        # code...
+        $data['siswa'] = $this->siswa_model->cariDataSiswa();
+      }
       $this->load->view('template/header',$data);
       $this->load->view('siswa/index');
       $this->load->view('template/footer');
@@ -52,7 +56,6 @@
 
     public function edit($id){
       $data['siswa'] = $this->siswa_model->getDataSiswaById($id);
-      $this->form_validation->set_rules('id', 'Id', array('required', 'min_length[4]'));
       $this->form_validation->set_rules('nama', 'Nama', array('required', 'min_length[4]'));
       $this->form_validation->set_rules('alamat', 'Alamat', array('required', 'min_length[4]'));
       $this->form_validation->set_rules('nim', 'Nim', 'required|numeric');

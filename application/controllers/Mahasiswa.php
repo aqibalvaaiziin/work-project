@@ -14,6 +14,10 @@
 
     public function index(){
       $data ['mahasiswa'] = $this->mahasiswa_model->getAllMahasiswa();
+      if ($this->input->post('keyword')) {
+        # code...
+        $data['mahasiswa'] = $this->mahasiswa_model->cariDatamahasiswa();
+      }
       $this->load->view('template/header',$data);
       $this->load->view('mahasiswa/index',$data);
       $this->load->view('template/footer');

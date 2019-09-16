@@ -38,6 +38,14 @@
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('siswa', $data);
       }
+
+      public function cariDataSiswa(){
+        $keyword = $this->input->post("keyword");
+        $this->db->like('nama',$keyword);
+        $this->db->or_like('alamat',$keyword);
+        $this->db->or_like('nim',$keyword);
+        return $this->db->get('siswa') -> result_array();
+      }
   }
   
   /* End of file siswa_model.php */
