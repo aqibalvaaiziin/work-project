@@ -9,6 +9,7 @@
     {
       parent::__construct();
       $this->load->model('login_model');
+      
     }
     
   
@@ -32,16 +33,20 @@
           $this->session->set_userdata('level',$row->level);
         }
 
-        if ($this->sessoin->userdata('level') == 'admin') {
+        if ($this->session->userdata('level') == 'admin') {
           # code...
-          redirect('mahasiswa');
+          redirect('mahasiswa/index');
         }
         else{
           redirect('mahasiswa/user');
         }
 
       }else{
-        redirect('login/index','refresh');
+        $data['message'] = "Username dan Password Salah";
+        $this->load->view('template/header_login',$data);
+        $this->load->view('login/index',$data);
+        $this->load->view('template/footer');
+        //redirect('login/index','refresh');
       }
 
     }
