@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="text" class="form-control form-control-lg rounded-0" name="password" id="password" required=""
+                  <input type="password" class="form-control form-control-lg rounded-0" name="password" id="password" required=""
                   autocomplete="new-password">
                   <div class="invalid-feedback">Enter your password too!.</div>
                 </div>
