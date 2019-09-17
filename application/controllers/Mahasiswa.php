@@ -23,6 +23,16 @@
       $this->load->view('template/footer');
     }
 
+    public function user(){
+      $data = array(
+        "title" => 'Data Mahasiswa',
+        "mahasiswa" => $this->mahasiswa_model->datatables()
+      );
+      $this->load->view('template/headerTable',$data);
+      $this->load->view('mahasiswa/user',$data);
+      $this->load->view('template/footerTable');
+    }
+
     public function tambah(){
       $data ['jurusan'] = array("Informatika","Kimia","Mesin");
       $this->form_validation->set_rules('nama', 'Nama', array('required', 'min_length[4]'));

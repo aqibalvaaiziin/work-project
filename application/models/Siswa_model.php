@@ -39,6 +39,10 @@
         $this->db->update('siswa', $data);
       }
 
+      public function datatables(){
+        return $this->db->order_by('id', 'desc')->get('siswa')->result();
+      }
+
       public function cariDataSiswa(){
         $keyword = $this->input->post("keyword");
         $this->db->like('nama',$keyword);

@@ -42,13 +42,16 @@
         }
 
       }else{
-        $data['message'] = "Username dan Password Salah";
-        $this->load->view('template/header_login',$data);
-        $this->load->view('login/index',$data);
-        $this->load->view('template/footer');
+        $this->session->set_flashdata('message', 'Password salah');
+        redirect('login');
         //redirect('login/index','refresh');
       }
 
+    }
+
+    public function logout(){
+      $this->session->sess_destroy();
+      redirect('login','refresh');
     }
   
   }

@@ -22,7 +22,17 @@
       $this->load->view('siswa/index');
       $this->load->view('template/footer');
     }
-  
+    
+    public function admin(){
+      $data = array(
+        "title" => 'Data Mahasiswa',
+        "siswa" => $this->siswa_model->datatables()
+      );
+      $this->load->view('template/headerTable',$data);
+      $this->load->view('siswa/admin',$data);
+      $this->load->view('template/footerTable');
+    }
+
     public function tambah(){
       $this->load->library('form_validation');
       $this->form_validation->set_rules('id', 'Id', array('required', 'min_length[4]'));

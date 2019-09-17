@@ -1,5 +1,5 @@
 <?=
-  form_open('login/proses_login');
+  form_open('loginSiswa/proses_login');
 ?>
 
 <div class="container py-5">

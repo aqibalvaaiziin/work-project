@@ -47,6 +47,11 @@
         return $this->db->get('mahasiswa') -> result_array();
       }
 
+      public function dataTables(){
+        return $this->db->order_by('id', 'desc')->get('mahasiswa')->result();
+        
+      }
+
   }
   
   /* End of file mahasiswa_model.php */
