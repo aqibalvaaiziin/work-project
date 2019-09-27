@@ -26,6 +26,7 @@
       <a class="nav-item nav-link active" href="<?= base_url().'home'; ?>">Home <span class="sr-only">(current)</span></a>
       <a href="<?= base_url().'mahasiswa'; ?>" class="nav-item nav-link">Mahasiswa</a>
       <a href="<?= base_url().'siswa'; ?>" class="nav-item nav-link">Siswa</a>
+      <a href="<?= base_url().'siswa/laporan_pdf'; ?>" class="nav-item nav-link">Cetak Siswa</a>
     </div>
   </div>
           <div class="float-right">

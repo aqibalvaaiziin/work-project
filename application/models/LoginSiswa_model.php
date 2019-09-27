@@ -16,7 +16,7 @@
             } else {
                 return $query->result();
             }
-          }
+        }
     
     }
     

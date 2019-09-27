@@ -25,6 +25,14 @@
               <label for="email">Email</label>
               <input type="text" class="form-control" id="email" name="email" value="<?= $mahasiswa['email'] ;?>">
             </div>
+            <div class="form-group">
+              <table for="jurusan">Jurusan</table>
+              <select name="jurusan" id="jurusan" class="form-control">
+                <?php foreach($jurusan as $key): ?>
+                  <option value="<?= $key ?>"><?= $key ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
             <button type="submit" name="submit" class="btn btn-success float-right">Submit</button>
           </form>
         </div>

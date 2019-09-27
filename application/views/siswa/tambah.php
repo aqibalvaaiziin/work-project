@@ -28,6 +28,14 @@
               <label for="nim">NIM</label>
               <input type="text" class="form-control" id="nim" name="nim">
             </div>
+            <div class="form-group">
+              <table for="jurusan">Jurusan</table>
+              <select name="jurusan" id="jurusan" class="form-control">
+                <?php foreach($jurusan as $key): ?>
+                  <option value="<?php echo $key ?>"><?php echo $key ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
             <button type="submit" name="submit" class="btn btn-success float-right">Submit</button>
           </form>
         </div>

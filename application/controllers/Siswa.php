@@ -8,6 +8,7 @@
     {
       parent::__construct();
       $this->load->model('siswa_model');
+      $this->load->model('modelCetak');
     }
     
     public function index()
@@ -80,6 +81,17 @@
         redirect('siswa','refresh');
       }
       
+    }
+
+    public function laporan_pdf(){
+
+      $this->load->library('pdf');
+      
+      $data['siswa'] = $this->modelCetak->cetakSiswa();
+  
+      $this->pdf->setPaper('A4', 'potrait');
+      $this->pdf->filename = "laporan-petanikode.pdf";
+      $this->pdf->load_view('siswa/laporan', $data);
     }
 
   }

@@ -34,7 +34,7 @@
           "nama" => $this->input->post("nama",true),
           "nim" => $this->input->post("nim",true),
           "email" => $this->input->post("email",true),
-          "jurusan" => $this->input->post("jurusanValue",true),
+          "jurusan" => $this->input->post("jurusan",true),
         );
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('mahasiswa', $data);

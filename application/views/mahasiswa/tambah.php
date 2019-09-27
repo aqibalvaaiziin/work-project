@@ -28,7 +28,7 @@
               <table for="jurusan">Jurusan</table>
               <select name="jurusan" id="jurusan" class="form-control">
                 <?php foreach($jurusan as $key): ?>
-                  <option value="<?= $key ?>"><?= $key ?></option>
+                  <option value="<?php echo $key ?>"><?php echo $key ?></option>
                 <?php endforeach; ?>
               </select>
             </div>

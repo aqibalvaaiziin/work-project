@@ -9,6 +9,7 @@
     {
       parent::__construct();
       $this->load->model('mahasiswa_model');
+      $this->load->model('modelCetak');
     }
     
 
@@ -79,6 +80,17 @@
         $this->mahasiswa_model->ubahDataMhs();
         redirect('mahasiswa','refresh');
       }
+    }
+
+    public function laporan_pdf(){
+
+      $this->load->library('pdf');
+      
+      $data['mahasiswa'] = $this->modelCetak->view();
+  
+      $this->pdf->setPaper('A4', 'potrait');
+      $this->pdf->filename = "laporan-petanikode.pdf";
+      $this->pdf->load_view('mahasiswa/laporan', $data);
     }
   
   }
