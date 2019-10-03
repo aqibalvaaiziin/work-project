@@ -25,4 +25,7 @@ class Welcome extends CI_Controller {
 	public function lala(){
 		echo "<h2>lala sehat kok</h2>";
 	}
+	public function lili(){
+		echo "<h2>lala sehat kok</h2>";
+	}
 }
